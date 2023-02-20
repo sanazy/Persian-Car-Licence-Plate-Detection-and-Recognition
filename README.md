@@ -33,13 +33,13 @@ In this step, `License-Plate-Detector.ipynb` is used. You might encounter follow
 
 To handle this bug, some minor changes to `loss.py` file as mentioned in this [link](https://stackoverflow.com/questions/74372636/indices-should-be-either-on-cpu-or-on-the-same-device-as-the-indexed-tensor) will help. 
 
-Training is last for about 1 hour for 30 epochs. 
-
-
+Training is last for about 1 hour for 30 epochs. In the following image, the result of training is shown:
 
 <p align="center">
  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/training_detector_result.png" width="1000" height="400"  />
 </p>
+
+As it can be seen, the precision, recall and mAP@o.5 (mAP calculated at IOU threshold 0.5) of both training and validation data reaches around 0.9 through training time.
 
 ## Step 2: Optical Character Recognition (OCR) using Image Processing Techniques and Convolutional Neural Networks (CNN)
 
