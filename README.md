@@ -35,8 +35,11 @@ To handle this bug, some minor changes to `loss.py` file as mentioned in this [l
 
 Training is last for about 1 hour for 30 epochs. 
 
-![](/Users/sanaz/Downloads/result.png)
 
+
+<p align="center">
+ <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/training_detector_result.png" width="600" height="400"  />
+</p>
 
 ## Step 2: Optical Character Recognition (OCR) using Image Processing Techniques and Convolutional Neural Networks (CNN)
 
