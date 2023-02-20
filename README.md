@@ -22,9 +22,9 @@ More information is available at this link \[[3](https://viso.ai/deep-learning/y
 ## Step 1: Automatic Number Plate Detection (ANPR) using Yolov7 pre-trained Model
 
 ### Step 1.1: 
-In order to trainig, two car datasets are used which have annotations for licence plates. One of them.
-And another one 
-Roboflow is a powerful platform which able us to create manual datasets. Hence, it is used to manage train/val/test splits of dataset and also add preprocessing and augmentation steps to dataset. Finally, it gives a few lines of code which can easily integerated into the colab.  
+In order to trainig, two car datasets are used which have annotations for licence plates. One of them is [Car License Plate Detection](https://www.kaggle.com/datasets/andrewmvd/car-plate-detection?resource=download) which consists of 433 images of licence plates. Another dataset is [IranianCarsNumberPlate](https://www.kaggle.com/datasets/skhalili/iraniancarnumberplate?resource=download) which has 442 images. The anotations of both dataset are in XML format.
+
+To easily generate a uniform dataset out of the above mentioned datasets, [roboflow](https://roboflow.com/) platform is used. It automatically load the images with their corresponding annotations, manage train/val/test splits and also add preprocessing and augmentation steps to dataset. Finally, it gives a few lines of code which can easily integerated into the colab.  
 
 ### Step 1.2:
 In this step, `License-Plate-Detector.ipynb` should be used. 
