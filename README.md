@@ -6,8 +6,9 @@ To detect the location of the car license plate in the images, Yolov7 pre-traine
 ### Performance
 Yolov7 was introduced in July 2022 and outperforms other object detection models in terms of accuracy and speed. In the image below, Yolov7 performance is compared to other well-known object detectors:
 
-<img src="https://res.cloudinary.com/dyd911kmh/image/upload/v1665138395/YOLOV_7_VS_Competitors_4ad9ccaa6f.png" width="500" height="200">
-
+<p align="center">
+ <img src="https://res.cloudinary.com/dyd911kmh/image/upload/v1665138395/YOLOV_7_VS_Competitors_4ad9ccaa6f.png" width="600" height="300">
+</p>
 ### Architecture
 Yolov7 model was trained on MS COOC dataset and no pre-trained weights were used for training 
 \[[1](https://pythonistaplanet.com/yolov7/)\]. 
