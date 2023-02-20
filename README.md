@@ -21,20 +21,22 @@ More information is available at this link \[[3](https://viso.ai/deep-learning/y
 
 ## Step 1: Automatic Number Plate Detection (ANPR) using Yolov7 pre-trained Model
 
-### Step 1.1: 
+### Step 1.1: Prepare the dataset 
 In order to trainig, two car datasets are used which have annotations for licence plates. One of them is [Car License Plate Detection](https://www.kaggle.com/datasets/andrewmvd/car-plate-detection?resource=download) which consists of 433 images of licence plates. Another dataset is [IranianCarsNumberPlate](https://www.kaggle.com/datasets/skhalili/iraniancarnumberplate?resource=download) which has 442 images. The anotations of both dataset are in XML format.
 
 To easily generate a uniform dataset out of the above mentioned datasets, [roboflow](https://roboflow.com/) platform is used. It automatically load the images with their corresponding annotations, manage train/val/test splits and also add preprocessing and augmentation steps to dataset. Finally, it gives a few lines of code which can easily integerated into the colab.  
 
-### Step 1.2:
-In this step, `License-Plate-Detector.ipynb` should be used. 
-
-
-You might encounter following error when you want to train the yolov7 model:
+### Step 1.2: Train the Yolov7 Model
+In this step, `License-Plate-Detector.ipynb` is used. You might encounter following error when you want to train the yolov7 model:
 
 `Indices should be either on cpu or on the same device as the indexed tensor`
 
 To handle this bug, some minor changes to `loss.py` file as mentioned in this [link](https://stackoverflow.com/questions/74372636/indices-should-be-either-on-cpu-or-on-the-same-device-as-the-indexed-tensor) will help. 
+
+Training is last for about 1 hour for 30 epochs. 
+
+![](/Users/sanaz/Downloads/result.png)
+
 
 ## Step 2: Optical Character Recognition (OCR) using Image Processing Techniques and Convolutional Neural Networks (CNN)
 
