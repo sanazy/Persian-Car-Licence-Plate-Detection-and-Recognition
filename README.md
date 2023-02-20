@@ -26,11 +26,12 @@ In order to trainig, two car datasets are used which have annotations for licenc
 
 To easily generate a uniform dataset out of the above mentioned datasets, [roboflow](https://roboflow.com/) platform is used. It automatically load the images with their corresponding annotations, manage train/val/test splits and also add preprocessing and augmentation steps to dataset. Finally, it gives a few lines of code which can easily integerated into the colab.  
 
+
 ### Step 1.2: Train the Yolov7 Model
-In this step, `License-Plate-Detector.ipynb` is used. You might encounter following error when you want to train the yolov7 model:
+In this step, `License-Plate-Detector.ipynb` is used. 
 
+You might encounter following error when you want to train the yolov7 model:
 `Indices should be either on cpu or on the same device as the indexed tensor`
-
 To handle this bug, some minor changes to `loss.py` file as mentioned in this [link](https://stackoverflow.com/questions/74372636/indices-should-be-either-on-cpu-or-on-the-same-device-as-the-indexed-tensor) will help. 
 
 Training is last for about 1 hour for 30 epochs. In the following image, the result of training is shown:
@@ -40,6 +41,13 @@ Training is last for about 1 hour for 30 epochs. In the following image, the res
 </p>
 
 As it can be seen, the precision, recall and mAP@o.5 (mAP calculated at IOU threshold 0.5) of both training and validation data reaches around 0.9 through training time.
+
+<p float="left">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_1.jpg" width="100" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_2.jpg" width="100" /> 
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_3.jpg" width="100" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_4.jpg" width="100" />
+</p>
 
 ## Step 2: Optical Character Recognition (OCR) using Image Processing Techniques and Convolutional Neural Networks (CNN)
 
