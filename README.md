@@ -5,14 +5,14 @@ To detect the location of the car license plate in the images, Yolov7 pre-traine
 
 ### Performance
 Yolov7 was introduced in July 2022 and outperforms other object detection models in terms of accuracy and speed. In the image below, Yolov7 performance is compared to other well-known object detectors:
-![Yolov7 Performance](https://res.cloudinary.com/dyd911kmh/image/upload/v1665138395/YOLOV_7_VS_Competitors_4ad9ccaa6f.png)
 
-Yolov7 model was trained on MS COOC dataset and no pre-trained weights were used for training. 
-\[[1](https://pythonistaplanet.com/yolov7/)\]
+<img src="[https://your-image-url.type](https://res.cloudinary.com/dyd911kmh/image/upload/v1665138395/YOLOV_7_VS_Competitors_4ad9ccaa6f.png)" width="100" height="100">
 
 ### Architecture
-In Yolov7 architecture, Extended Efficient Layer Aggregation Network (E-ELAN) were used which leads the model to learn more features. Moreover, the architecture of Yolov7 has scaled by concatenating other models such as YOLO-R which can address different speeds for inference.
-Thanks to bag-of-freebies, Yolov7 has better accuracy without any increment in the inference speed
+Yolov7 model was trained on MS COOC dataset and no pre-trained weights were used for training 
+\[[1](https://pythonistaplanet.com/yolov7/)\]. 
+
+In Yolov7 architecture, Extended Efficient Layer Aggregation Network (E-ELAN) were used which leads the model to learn more features. Moreover, the architecture of Yolov7 has scaled by concatenating other models such as YOLO-R which can address different speeds for inference. Thanks to bag-of-freebies, Yolov7 has better accuracy without any increment in the inference speed
 \[[2](https://www.datacamp.com/blog/yolo-object-detection-explained)\].
 
 More information is available at this link \[[3](https://viso.ai/deep-learning/yolov7-guide/)\].
