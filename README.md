@@ -45,9 +45,9 @@ As it can be seen, the precision, recall and mAP@o.5 (mAP calculated at IOU thre
 Here a few test images that their license plate are correctly predicted by trained model are shown. The model could correctly detect license plates and draw their corresponding bounding boxes in different circumstances with different angels and illumination. In addition, it could detect two or more license plates whenever more cars are available in the image:
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_1.jpg" width="300" />
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_4.jpg" width="300" /> 
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_3.jpg" width="300" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_1.jpg" width="200" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_4.jpg" width="200" /> 
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_3.jpg" width="200" />
 </p>
 
 There are also some false positives where model incorrectly detect some rectangular shapes as license plate:
