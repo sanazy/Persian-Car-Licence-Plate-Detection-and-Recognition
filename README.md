@@ -42,7 +42,7 @@ Training is last for about 1 hour for 30 epochs. In the following image, the res
 
 As it can be seen, the precision, recall and mAP@o.5 (mAP calculated at IOU threshold 0.5) of both training and validation data reaches around 0.9 through training time.
 
-Here a few test images that their license plate are correctly predicted by trained model are shown. The model could correctly detect license plate in different angles and illumination. In addition, it could detect two or more license plates whenever more cars are available in the image:
+Here a few test images that their license plate are correctly predicted by trained model are shown. The model could correctly detect license plates and draw their corresponding bounding boxes in different circumstances with different angels and illumination. In addition, it could detect two or more license plates whenever more cars are available in the image:
 
 <p align="center">
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_1.jpg" width="300" />
