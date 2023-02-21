@@ -60,7 +60,28 @@ There are also some false positives where model incorrectly detect some rectangu
 
 ## Step 2: Optical Character Recognition (OCR) using Image Processing Techniques and Convolutional Neural Networks (CNN)
 
-### Step 2.1
+After localizing the location of license plate in an image, now, it is time to recognize the characters written in the plate. 
+
+### Step 2.1 Prepare the Dataset and Train the CNN model
+First,
+
+
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/iranis_samples.png" width="300" />
+</p>
+
+
+
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_architecture.png" width="300" />
+</p>
+
+
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" width="300" />
+</p>
+
+
 
 ### Step 2.2
 
