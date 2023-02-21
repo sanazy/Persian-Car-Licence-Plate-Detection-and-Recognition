@@ -42,11 +42,11 @@ Training is last for about 1 hour for 30 epochs. In the following image, the res
 
 As it can be seen, the precision, recall and mAP@o.5 (mAP calculated at IOU threshold 0.5) of both training and validation data reaches around 0.9 through training time.
 
-<p float="left">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_1.jpg" width="250" />
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_2.jpg" width="250" /> 
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_3.jpg" width="250" />
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_4.jpg" width="250" />
+<p float="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_1.jpg" width="300" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_2.jpg" width="300" /> 
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_3.jpg" width="300" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correct_plate_4.jpg" width="300" />
 </p>
 
 ## Step 2: Optical Character Recognition (OCR) using Image Processing Techniques and Convolutional Neural Networks (CNN)
