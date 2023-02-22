@@ -60,6 +60,8 @@ There are also some false positives where model incorrectly detect some rectangu
 
 ## Step 2: Optical Character Recognition (OCR) using Image Processing Techniques and Convolutional Neural Networks (CNN)
 
+In this step, `Train_CNN_Model_for_OCR.ipynb` is used.
+
 After localizing the location of license plate in an image, now, it is time to recognize the characters written in the plate. 
 
 ### Step 2.1 Prepare the Dataset and Train the CNN model
