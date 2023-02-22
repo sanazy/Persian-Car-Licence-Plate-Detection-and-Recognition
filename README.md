@@ -7,7 +7,7 @@ To detect the location of the car license plate in the images, Yolov7 pre-traine
 Yolov7 was introduced in July 2022 and outperforms other object detection models in terms of accuracy and speed. In the image below, Yolov7 performance is compared to other well-known object detectors:
 
 <p align="center">
- <img src="https://res.cloudinary.com/dyd911kmh/image/upload/v1665138395/YOLOV_7_VS_Competitors_4ad9ccaa6f.png" width="700" height="400"  />
+ <img src="https://res.cloudinary.com/dyd911kmh/image/upload/v1665138395/YOLOV_7_VS_Competitors_4ad9ccaa6f.png" width="500"/>
 </p>
 
 ### Architecture
@@ -37,7 +37,7 @@ To handle this bug, some minor changes to `loss.py` file as mentioned in this [l
 Training is last for about 1 hour for 30 epochs. In the following image, the result of training is shown:
 
 <p align="center">
- <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/training_detector_result.png" width="1000" height="400"  />
+ <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/training_detector_result.png" width="500"/>
 </p>
 
 As it can be seen, the precision, recall and mAP@o.5 (mAP calculated at IOU threshold 0.5) of both training and validation data reaches around 0.9 through training time.
