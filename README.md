@@ -82,7 +82,7 @@ For training a nueral network, a dataset should be splitted into training, valid
 In order to recognize each character/number, first, we should train a image classification model on our prepared dataset. A roughly simple convolutional neural network, which its architecute is shown in the image below, is used for classification task:  
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_architecture.png" width=500/>
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_architecture.jpg" width=500/>
 </p>
 
 After training the CNN model for about 10 epochs, the validation and training loss becomes very small. In the graphs below, the accuracy and loss for training and validation in each epoch is shown:
