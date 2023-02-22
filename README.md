@@ -72,6 +72,9 @@ In the image below, some sample images of this dataset for each character and nu
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/iranis_samples.png" width=500/>
 </p>
 
+As it can be seen, there are 28 classes in this dataset. It is good to mention that license plates with red, green and yellow backgrounds are related to govermental, police and pubic transportation and taxi cars. While the white background license plates are refered to the normal private cars. 
+
+
 For training a nueral network, a dataset should be splitted into training, validation and test sets. Working with raw dataset of Iranis would not be helpful. Thus, a python package named [split-folders](https://pypi.org/project/split-folders/) is used to split a dataset into different abovementioned sets. In this way, each character and number have same ratio in training, validation and test sets.   
 
 In order to recognize each character/number, first, we should train a image classification model on our prepared dataset. A roughly simple convolutional neural network, which its architecute is shown in the image below, is used for classification task:  
@@ -80,11 +83,13 @@ In order to recognize each character/number, first, we should train a image clas
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_architecture.png" width=500/>
 </p>
 
+After training the CNN model for about 10 epochs, the validation and training loss becomes very small. In the graphs below, the accuracy and loss for training and validation in each epoch is shown:
 
 <p align="center">
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_result.png" width=500/>
 </p>
 
+Moreover, the confusion matrix shows that number of true positives for each class is much higher than false predictions as the diagonal valus are show higher numbers: 
 
 <p align="center">
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" width=500/>
