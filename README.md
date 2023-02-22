@@ -7,7 +7,7 @@ To detect the location of the car license plate in the images, Yolov7 pre-traine
 Yolov7 was introduced in July 2022 and outperforms other object detection models in terms of accuracy and speed. In the image below, Yolov7 performance is compared to other well-known object detectors:
 
 <p align="center">
- <img src="https://res.cloudinary.com/dyd911kmh/image/upload/v1665138395/YOLOV_7_VS_Competitors_4ad9ccaa6f.png" width="700" height="400"  />
+ <img src="https://res.cloudinary.com/dyd911kmh/image/upload/v1665138395/YOLOV_7_VS_Competitors_4ad9ccaa6f.png" width="500"/>
 </p>
 
 ### Architecture
@@ -37,7 +37,7 @@ To handle this bug, some minor changes to `loss.py` file as mentioned in this [l
 Training is last for about 1 hour for 30 epochs. In the following image, the result of training is shown:
 
 <p align="center">
- <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/training_detector_result.png" width="1000" height="400"  />
+ <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/training_detector_result.png" width="500"/>
 </p>
 
 As it can be seen, the precision, recall and mAP@o.5 (mAP calculated at IOU threshold 0.5) of both training and validation data reaches around 0.9 through training time.
@@ -53,32 +53,48 @@ Here a few test images that their license plate are correctly predicted by train
 There are also some false positives where model incorrectly detect some rectangular shapes as license plate:
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/wrong_plate_1.jpg" width="300" />
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/wrong_plate_2.jpg" width="300" /> 
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/wrong_plate_1.jpg" width="200" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/wrong_plate_2.jpg" width="200" /> 
 </p>
 
 
 ## Step 2: Optical Character Recognition (OCR) using Image Processing Techniques and Convolutional Neural Networks (CNN)
 
+In this step, `Train_CNN_Model_for_OCR.ipynb` is used.
+
 After localizing the location of license plate in an image, now, it is time to recognize the characters written in the plate. 
 
 ### Step 2.1 Prepare the Dataset and Train the CNN model
-First,
 
+To train an model to recognize the persian characters and numbers, we need to have a related dataset. After some reseach, a dataset named **Iranis** was found which is appropriate for training licence plate recognition applications. Iranis is a large-scale dataset consists of more than 83000 real-world images of persian characters and numbers of car license plates [?](https://arxiv.org/ftp/arxiv/papers/2101/2101.00295.pdf). 
+
+In the image below, some sample images of this dataset for each character and number is shown:
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/iranis_samples.png" width="300" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/iranis_samples.png" width=500/>
 </p>
 
+As it can be seen, there are 28 classes in this dataset. It is good to mention that license plates with red, green and yellow backgrounds are related to govermental, police and pubic transportation and taxi cars. While the white background license plates are refered to the normal private cars. 
 
+
+For training a nueral network, a dataset should be splitted into training, validation and test sets. Working with raw dataset of Iranis would not be helpful. Thus, a python package named [split-folders](https://pypi.org/project/split-folders/) is used to split a dataset into different abovementioned sets. In this way, each character and number have same ratio in training, validation and test sets.   
+
+In order to recognize each character/number, first, we should train a image classification model on our prepared dataset. A roughly simple convolutional neural network, which its architecute is shown in the image below, is used for classification task:  
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_architecture.png" width="300" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_architecture.png" width=500/>
 </p>
 
+After training the CNN model for about 10 epochs, the validation and training loss becomes very small. In the graphs below, the accuracy and loss for training and validation in each epoch is shown:
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" width="300" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_result.png" width=500/>
+</p>
+
+Moreover, the confusion matrix shows that number of true positives for each class is much higher than false predictions as the diagonal valus are show higher numbers: 
+
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" width=500/>
 </p>
 
 
