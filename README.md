@@ -67,7 +67,7 @@ After localizing the location of license plate in an image, now, it is time to r
 To train an model to recognize the persian characters and numbers, we need to have a related dataset. After some reseach, Iranis dataset was found which is appropriate for training licence plate recognition applications. Iranis is a large-scale dataset consists of more than 83000 real-world images of persian characters and numbers of car license plates [?](https://arxiv.org/ftp/arxiv/papers/2101/2101.00295.pdf). In the image below, some sample images of this dataset for each character and number is shown:
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/iranis_samples.png"/>
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/iranis_samples.png" width=500/>
 </p>
 
 
