@@ -64,26 +64,30 @@ After localizing the location of license plate in an image, now, it is time to r
 
 ### Step 2.1 Prepare the Dataset and Train the CNN model
 
-To train an model to recognize the persian characters and numbers, we need to have a related dataset. After some reseach, Iranis dataset was found which is appropriate for training licence plate recognition applications. Iranis is a large-scale dataset consists of more than 83000 real-world images of persian characters and numbers of car license plates [?](https://arxiv.org/ftp/arxiv/papers/2101/2101.00295.pdf). In the image below, some sample images of this dataset for each character and number is shown:
+To train an model to recognize the persian characters and numbers, we need to have a related dataset. After some reseach, a dataset named **Iranis** was found which is appropriate for training licence plate recognition applications. Iranis is a large-scale dataset consists of more than 83000 real-world images of persian characters and numbers of car license plates [?](https://arxiv.org/ftp/arxiv/papers/2101/2101.00295.pdf). 
+
+In the image below, some sample images of this dataset for each character and number is shown:
 
 <p align="center">
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/iranis_samples.png" width=500/>
 </p>
 
+For training a nueral network, a dataset should be splitted into training, validation and test sets. Working with raw dataset of Iranis would not be helpful. Thus, a python package named [split-folders](https://pypi.org/project/split-folders/) is used to split a dataset into different abovementioned sets. In this way, each character and number have same ratio in training, validation and test sets.   
 
+In order to recognize each character/number, first, we should train a image classification model on our prepared dataset. A roughly simple convolutional neural network, which its architecute is shown in the image below, is used for classification task:  
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_architecture.png"/>
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_architecture.png" width=500/>
 </p>
 
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_result.png"/>
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_model_result.png" width=500/>
 </p>
 
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" />
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" width=500/>
 </p>
 
 
