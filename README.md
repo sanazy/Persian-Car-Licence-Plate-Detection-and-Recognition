@@ -3,6 +3,13 @@
  
 ## Introduction
 This project is mostly inspired by this helpful [link](https://www.youtube.com/watch?v=bgAUHS1Adzo).
+
+<p align="center">
+ <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/project_overview.png" width="500"/>
+</p>
+
+
+
  
 ## YOLOV7  
 To detect the location of the car license plate in the images, Yolov7 pre-trained model were used. Here is the short description of this high-performing model:
