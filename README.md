@@ -5,7 +5,7 @@
 This project is mostly inspired by this helpful [link](https://www.youtube.com/watch?v=bgAUHS1Adzo).
 
 <p align="center">
- <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/project_overview.png" width="500"/>
+ <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/project_overview.png" width="800"/>
 </p>
 
 
@@ -31,11 +31,6 @@ In Yolov7 architecture, Extended Efficient Layer Aggregation Network (E-ELAN) we
 More information is available at this link \[[3](https://viso.ai/deep-learning/yolov7-guide/)\].
 
 ## Step 1: Number Plate Detection using Yolov7 pre-trained Model
-
-
-<p align="center">
- <img src="https://www.wilsonsecurity.com.au/contentassets/c07b1539bc0142c0b539268d9622c1fd/lpr-web.png" width="300"/>
-</p>
 
 
 
@@ -78,10 +73,6 @@ There are also some false positives where model incorrectly detect some rectangu
 
 
 ## Step 2: Optical Character Recognition (OCR) 
-
-<p align="center">
- <img src="https://img.freepik.com/premium-vector/optical-character-recognition-ocr-technology-check-car-speed-license-plate_518018-678.jpg?w=1380" width="300"/>
-</p>
 
 
 After detecting the location of licence plate of car in an image, now, it is time to recognize the exact character and numbers written in the plate. For this step, many methods are described in the litriture. One of them is using open source packages like [Tesseract](https://github.com/tesseract-ocr/tesseract) and [EasyOCR](https://github.com/JaidedAI/EasyOCR) which support many languages including persian. Unfortunately, the problem with them is that they must be fine tuned especially for the font used in persian license plates. Otherwise, they do not give acceptable result in recognizing the characters [???](https://haghiri75.com/2022/01/17/%D8%AE%D9%88%D8%A7%D9%86%D8%AF%D9%86-%D9%BE%D9%84%D8%A7%DA%A9-%D8%AE%D9%88%D8%AF%D8%B1%D9%88-%D8%A8%D8%A7-%DA%A9%D9%85%DA%A9-yolov5-%D9%88-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86/).
