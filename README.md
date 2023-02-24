@@ -1,4 +1,4 @@
-# Persian-Car-Licence-Plate-Detection-and-Recognition
+# Automatic Number Plate Recognition for Persian Cars 
  
  
 ## Introduction
@@ -23,7 +23,7 @@ In Yolov7 architecture, Extended Efficient Layer Aggregation Network (E-ELAN) we
 
 More information is available at this link \[[3](https://viso.ai/deep-learning/yolov7-guide/)\].
 
-## Step 1: Automatic Number Plate Detection (ANPR) using Yolov7 pre-trained Model
+## Step 1: Number Plate Detection using Yolov7 pre-trained Model
 
 
 <p align="center">
