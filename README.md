@@ -27,7 +27,7 @@ More information is available at this link \[[3](https://viso.ai/deep-learning/y
 
 
 <p align="center">
- <img src="https://www.wilsonsecurity.com.au/contentassets/c07b1539bc0142c0b539268d9622c1fd/lpr-web.png/PageHeaderDesktop-64341-1440-600-100-0,0" width="300"/>
+ <img src="https://www.wilsonsecurity.com.au/contentassets/c07b1539bc0142c0b539268d9622c1fd/lpr-web.png" width="300"/>
 </p>
 
 
