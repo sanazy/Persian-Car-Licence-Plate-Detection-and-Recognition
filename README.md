@@ -66,7 +66,7 @@ There are also some false positives where model incorrectly detect some rectangu
 ## Step 2: Optical Character Recognition (OCR) 
 
 <p align="center">
- <img src="https://img.freepik.com/premium-vector/optical-character-recognition-ocr-technology-check-car-speed-license-plate_518018-678.jpg?w=1380" width="100"/>
+ <img src="https://img.freepik.com/premium-vector/optical-character-recognition-ocr-technology-check-car-speed-license-plate_518018-678.jpg?w=1380" width="300"/>
 </p>
 
 
