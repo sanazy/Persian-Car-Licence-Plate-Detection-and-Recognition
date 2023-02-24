@@ -65,11 +65,11 @@ There are also some false positives where model incorrectly detect some rectangu
 
 ## Step 2: Optical Character Recognition (OCR) 
 
-After detecting the location of licence plate of car in an image, now, it is time to recognize the exact character and numbers written in the plate. For this step, many methods are described in the litriture. One of them is using open source packages like [Tesseract](https://github.com/tesseract-ocr/tesseract) and [EasyOCR](https://github.com/JaidedAI/EasyOCR) which support many languages including persian. Unfortunately, the problem with them is that they must be fine tuned especially for the font used in persian license plates. Otherwise, they do not give acceptable result in recognizing the characters.
+After detecting the location of licence plate of car in an image, now, it is time to recognize the exact character and numbers written in the plate. For this step, many methods are described in the litriture. One of them is using open source packages like [Tesseract](https://github.com/tesseract-ocr/tesseract) and [EasyOCR](https://github.com/JaidedAI/EasyOCR) which support many languages including persian. Unfortunately, the problem with them is that they must be fine tuned especially for the font used in persian license plates. Otherwise, they do not give acceptable result in recognizing the characters [???](https://haghiri75.com/2022/01/17/%D8%AE%D9%88%D8%A7%D9%86%D8%AF%D9%86-%D9%BE%D9%84%D8%A7%DA%A9-%D8%AE%D9%88%D8%AF%D8%B1%D9%88-%D8%A8%D8%A7-%DA%A9%D9%85%DA%A9-yolov5-%D9%88-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86/).
 
 Another way for OCR of license plate is to find out where the location of each character/number is in the image by image processing techniques and then give it to a trained image classificatier model to distiguishe it correctley. Although it is a more acceptable method than abovemethoined one, it needs a good collection of data for each character/number used in license plate for training. In addition, since image processing techniques are somehow a manual way of feature enginnering, it might have shortage to generalize rules for all circemstances. Despite the limits, this method is implemented in step 2.1 and results are discussed.
 
-Another 
+Another method is to train an object detection model such as yolov7, this time, for recognizing characters/numbers in license plates of cars. This method is implemented and discussed in step 2.2. 
 
 
 ### Step 2.1: OCR using Image Processing Techniques and Convolutional Neural Networks (CNN)
@@ -77,13 +77,9 @@ Another
 
 
 
-
+#### Step 2.1.1 Prepare the Dataset and Train the CNN model
 
 In this step, `Train_CNN_Model_for_OCR.ipynb` is used.
-
-After localizing the location of license plate in an image, now, it is time to recognize the characters written in the plate. 
-
-#### Step 2.1.1 Prepare the Dataset and Train the CNN model
 
 To train an model to recognize the persian characters and numbers, we need to have a related dataset. After some reseach, a dataset named **Iranis** was found which is appropriate for training licence plate recognition applications. Iranis is a large-scale dataset consists of more than 83000 real-world images of persian characters and numbers of car license plates [?](https://arxiv.org/ftp/arxiv/papers/2101/2101.00295.pdf). 
 
@@ -118,7 +114,7 @@ Moreover, the confusion matrix shows that number of true positives for each clas
 
 
 
-#### Step 2.2.2 
+#### Step 2.2.2: Apply Image Processing Techniques  
 
 
 ### Step 2.2: OCR using Yolov7 pre-trained Model
@@ -128,8 +124,9 @@ Moreover, the confusion matrix shows that number of true positives for each clas
 
 ## Future Work
 
-- Tune the hyperparameters to improve the performance of models
-- Annotate more data for missclassfied characters or numbers
+- Train for more epochs and tune the hyperparameters to improve the performance of models
+- Investigate missclassfied license plates for detection and characters/numbers for recognition
+- Annotate more data for OCR
 - Recognize the characters/numbers of license plates other than private cars such as govermental, police and public transportation
 - Recognize the characters/numbers of free zone and temporary passing license plates
 - Deploy the trained model on a web/mobile application and examine the performance on real-world images
