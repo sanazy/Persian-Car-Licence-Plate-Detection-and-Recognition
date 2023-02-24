@@ -25,6 +25,13 @@ More information is available at this link \[[3](https://viso.ai/deep-learning/y
 
 ## Step 1: Automatic Number Plate Detection (ANPR) using Yolov7 pre-trained Model
 
+
+<p align="center">
+ <img src="https://www.wilsonsecurity.com.au/contentassets/c07b1539bc0142c0b539268d9622c1fd/lpr-web.png/PageHeaderDesktop-64341-1440-600-100-0,0" width="300"/>
+</p>
+
+
+
 ### Step 1.1: Prepare the dataset 
 In order to trainig, two car datasets are used which have annotations for licence plates. One of them is [Car License Plate Detection](https://www.kaggle.com/datasets/andrewmvd/car-plate-detection?resource=download) which consists of 433 images of licence plates. Another dataset is [IranianCarsNumberPlate](https://www.kaggle.com/datasets/skhalili/iraniancarnumberplate?resource=download) which has 442 images. The anotations of both dataset are in XML format.
 
