@@ -107,3 +107,14 @@ Moreover, the confusion matrix shows that number of true positives for each clas
 
 ## Step 3: Optical Character Recognition (OCR) using Yolov7 pre-trained Model
 
+
+
+
+### Future Work
+
+- Annotate more data for missclassfied characters or numbers
+- Recognize the characters/numbers of license plates other than private cars such as govermental, police and public transportation
+- Recognize the characters/numbers of free zone and temporary passing license plates
+- Deploy the trained model on a web/mobile application and examine the performance on real-world images
+- Extend the overall idea of detecting and recognizing license plates of images into videos for tracked cars
+
