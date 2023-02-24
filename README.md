@@ -1,4 +1,4 @@
-# Automatic Number Plate Recognition for Persian Cars 
+# Automatic Number Plate Recognition (ANPR) for Persian Cars 
  
  
 ## Introduction
