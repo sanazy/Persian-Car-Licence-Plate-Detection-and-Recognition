@@ -110,8 +110,9 @@ Moreover, the confusion matrix shows that number of true positives for each clas
 
 
 
-### Future Work
+## Future Work
 
+- Tune the hyperparameters to improve the performance of models
 - Annotate more data for missclassfied characters or numbers
 - Recognize the characters/numbers of license plates other than private cars such as govermental, police and public transportation
 - Recognize the characters/numbers of free zone and temporary passing license plates
