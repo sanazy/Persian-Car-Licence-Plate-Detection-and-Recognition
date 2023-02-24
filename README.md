@@ -65,6 +65,11 @@ There are also some false positives where model incorrectly detect some rectangu
 
 ## Step 2: Optical Character Recognition (OCR) 
 
+<p align="center">
+ <img src="https://img.freepik.com/premium-vector/optical-character-recognition-ocr-technology-check-car-speed-license-plate_518018-678.jpg?w=1380" width="500"/>
+</p>
+
+
 After detecting the location of licence plate of car in an image, now, it is time to recognize the exact character and numbers written in the plate. For this step, many methods are described in the litriture. One of them is using open source packages like [Tesseract](https://github.com/tesseract-ocr/tesseract) and [EasyOCR](https://github.com/JaidedAI/EasyOCR) which support many languages including persian. Unfortunately, the problem with them is that they must be fine tuned especially for the font used in persian license plates. Otherwise, they do not give acceptable result in recognizing the characters [???](https://haghiri75.com/2022/01/17/%D8%AE%D9%88%D8%A7%D9%86%D8%AF%D9%86-%D9%BE%D9%84%D8%A7%DA%A9-%D8%AE%D9%88%D8%AF%D8%B1%D9%88-%D8%A8%D8%A7-%DA%A9%D9%85%DA%A9-yolov5-%D9%88-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86/).
 
 Another way for OCR of license plate is to find out where the location of each character/number is in the image by image processing techniques and then give it to a trained image classificatier model to distiguishe it correctley. Although it is a more acceptable method than abovemethoined one, it needs a good collection of data for each character/number used in license plate for training. In addition, since image processing techniques are somehow a manual way of feature enginnering, it might have shortage to generalize rules for all circemstances. Despite the limits, this method is implemented in step 2.1 and results are discussed.
