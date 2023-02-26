@@ -89,7 +89,6 @@ Another method is to train an object detection model such as yolov7, this time, 
 
 #### Step 2.1.1 Prepare the Dataset and Train the CNN model
 
-In this step, `Train_CNN_Model_for_OCR.ipynb` is used.
 
 To train an model to recognize the persian characters and numbers, we need to have a related dataset. After some reseach, a dataset named **Iranis** was found which is appropriate for training licence plate recognition applications. Iranis is a large-scale dataset consists of more than 83000 real-world images of persian characters and numbers of car license plates [?](https://arxiv.org/ftp/arxiv/papers/2101/2101.00295.pdf). 
 
@@ -122,16 +121,18 @@ Moreover, the confusion matrix shows that number of true positives for each clas
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" width=500/>
 </p>
 
-
+In this step, `Train_CNN_Model_for_OCR.ipynb` is used.
 
 #### Step 2.2.2: Apply Image Processing Techniques  
 
+In this step, 
 
 <p align="center">
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/ocr_image_processing_table.png" width=900/>
 </p>
 
 
+In this step, `OCR-Image-Processing.ipynb` is used.
 
 ### Step 2.2: OCR using Yolov7 pre-trained Model
 
