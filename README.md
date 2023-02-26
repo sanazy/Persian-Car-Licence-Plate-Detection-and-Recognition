@@ -71,7 +71,7 @@ There are also some false positives where model incorrectly detect some rectangu
 </p>
 
 
-Note: For this step, `License-Plate-Detector.ipynb` is used. 
+Note: For this step, `Train_Yolov7_for_LPD.ipynb` is used. 
 
 ## Step 2: Optical Character Recognition (OCR) 
 
@@ -122,7 +122,7 @@ Moreover, the confusion matrix shows that number of true positives for each clas
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" width=500/>
 </p>
 
-Note: For this step, `Train_CNN_Model_for_OCR.ipynb` is used.
+Note: For this step, `Train_CNN_Model_for_LPR.ipynb` is used.
 
 
 
@@ -151,10 +151,21 @@ In the image below, the result of some of the abovementioned steps for correctly
 Probelms:
 
 
-Note: For this step, `OCR-Image-Processing.ipynb` is used.
+Note: For this step, `LPR_Image_Processing.ipynb` is used.
+
 
 ### Step 2.2: OCR using Yolov7 pre-trained Model
 
+
+#### Step 2.2.1: Prepare dataset  
+
+
+#### Step 2.2.2: Train a model using yolov7
+
+
+Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
+
+#### Step 2.2.3: 
 
 
 
