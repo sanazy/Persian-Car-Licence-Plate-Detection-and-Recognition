@@ -127,6 +127,9 @@ In this step, `Train_CNN_Model_for_OCR.ipynb` is used.
 
 After training a model to classify each character/number, it is time to segment each one and feed it to the model to recognize which character it is. In this section, several image processing techniques have been used for segmentation of characters in detected plate. 
 
+
+In the following the general steps which are taken for character segmentation and recognition are listed:
+
 1) Detect the location of plate
 2) Change the detected plate to gray image
 3) Find the longest line in the image
@@ -134,10 +137,10 @@ After training a model to classify each character/number, it is time to segment 
 5) Rotate the image if the calculated angle is greater than 10 or smaller than -10; in this way later classification problem will be easier 
 6) Preprocess the image including apply gaussian blur, otsu thereshold, dilation to make characters in plate recognizeble from noise and background, then find connected contours 
 7) Search through found connected white blobs and check some criteria such as ratio and area; if ratio of hight to the width of rectangle containing the blob is greater than 0.8 and area of rectangle is greater than 100 then apply the image classification to recognize which character or number it is based on our trained ocr model
-8) Print the found the number of license plate and save the annotated image into the drive
+8) Print the number of license plate and save the annotated image into the drive
 
 
-In the image below, some of the abovementioned steps are shown for correctly recognized license plates: 
+In the image below, the result of some of the abovementioned steps for correctly recognized license plates are shown: 
 
 <p align="center">
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/ocr_image_processing_table.png" width=900/>
