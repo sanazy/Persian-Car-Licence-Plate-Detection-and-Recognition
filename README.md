@@ -127,6 +127,12 @@ Moreover, the confusion matrix shows that number of true positives for each clas
 #### Step 2.2.2: Apply Image Processing Techniques  
 
 
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/ocr_image_processing_table.png" width=900/>
+</p>
+
+
+
 ### Step 2.2: OCR using Yolov7 pre-trained Model
 
 
