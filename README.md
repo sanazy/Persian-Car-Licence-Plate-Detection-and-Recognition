@@ -35,13 +35,13 @@ More information is available at this link \[[3](https://viso.ai/deep-learning/y
 
 
 ### Step 1.1: Prepare the dataset 
+
 In order to trainig, two car datasets are used which have annotations for licence plates. One of them is [Car License Plate Detection](https://www.kaggle.com/datasets/andrewmvd/car-plate-detection?resource=download) which consists of 433 images of licence plates. Another dataset is [IranianCarsNumberPlate](https://www.kaggle.com/datasets/skhalili/iraniancarnumberplate?resource=download) which has 442 images. The anotations of both dataset are in XML format.
 
 To easily generate a uniform dataset out of the above mentioned datasets, [roboflow](https://roboflow.com/) platform is used. It automatically load the images with their corresponding annotations, manage train/val/test splits and also add preprocessing and augmentation steps to dataset. Finally, it gives a few lines of code which can easily integerated into the colab.  
 
 
 ### Step 1.2: Train the Yolov7 Model
-In this step, `License-Plate-Detector.ipynb` is used. 
 
 You might encounter following error when you want to train the yolov7 model:
 `Indices should be either on cpu or on the same device as the indexed tensor`
@@ -71,6 +71,7 @@ There are also some false positives where model incorrectly detect some rectangu
 </p>
 
 
+Note: For this step, `License-Plate-Detector.ipynb` is used. 
 
 ## Step 2: Optical Character Recognition (OCR) 
 
@@ -89,7 +90,6 @@ Another method is to train an object detection model such as yolov7, this time, 
 
 #### Step 2.1.1 Prepare the Dataset and Train the CNN model
 
-In this step, `Train_CNN_Model_for_OCR.ipynb` is used.
 
 To train an model to recognize the persian characters and numbers, we need to have a related dataset. After some reseach, a dataset named **Iranis** was found which is appropriate for training licence plate recognition applications. Iranis is a large-scale dataset consists of more than 83000 real-world images of persian characters and numbers of car license plates [?](https://arxiv.org/ftp/arxiv/papers/2101/2101.00295.pdf). 
 
@@ -122,10 +122,36 @@ Moreover, the confusion matrix shows that number of true positives for each clas
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" width=500/>
 </p>
 
+Note: For this step, `Train_CNN_Model_for_OCR.ipynb` is used.
+
 
 
 #### Step 2.2.2: Apply Image Processing Techniques  
 
+After training a model to classify each character/number, it is time to segment each one and feed it to the model to recognize which character it is. In this section, several image processing techniques have been used for segmentation of characters in detected plate. 
+
+
+In the following the general steps which are taken for character segmentation and recognition are listed:
+
+1) Detect the location of plate and change the detected plate to gray image
+3) Find the longest line in the image and calculate the angle of longest line in respect to the image
+5) Rotate the image if the calculated angle is greater than 10 or smaller than -10; in this way later classification problem will be easier [???](https://github.com/mrymsadeghi/Colab_notebooks/blob/main/plate_OCR_comparison.ipynb)
+6) Preprocess the image including apply gaussian blur, otsu thereshold, dilation to make characters in plate recognizeble from noise and background, then find connected contours [???](http://dangminhthang.com/computer-vision/characters-segmentation-and-recognition-for-vehicle-license-plate/)
+7) Search through found connected white blobs and check some criteria such as ratio and area; if ratio of hight to the width of rectangle containing the blob is greater than 0.8 and area of rectangle is greater than 100 then apply the image classification to recognize which character or number it is based on our trained ocr model [???](https://github.com/theAIGuysCode/yolov4-custom-functions)
+8) Print the number of license plate and save the annotated image into the drive
+
+
+In the image below, the result of some of the abovementioned steps for correctly recognized license plates are shown: 
+
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/ocr_image_processing_table.png" width=900/>
+</p>
+
+
+
+
+
+Note: For this step, `OCR-Image-Processing.ipynb` is used.
 
 ### Step 2.2: OCR using Yolov7 pre-trained Model
 
