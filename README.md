@@ -147,6 +147,9 @@ In the image below, the result of some of the abovementioned steps for correctly
 </p>
 
 
+
+
+
 In this step, `OCR-Image-Processing.ipynb` is used.
 
 ### Step 2.2: OCR using Yolov7 pre-trained Model
