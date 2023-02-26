@@ -148,7 +148,7 @@ In the image below, the result of some of the abovementioned steps for correctly
 </p>
 
 
-
+Probelms:
 
 
 Note: For this step, `OCR-Image-Processing.ipynb` is used.
