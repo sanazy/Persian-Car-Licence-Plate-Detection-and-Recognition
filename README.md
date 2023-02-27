@@ -168,6 +168,7 @@ Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
 #### Step 2.2.3: 
 
 
+Note: For this step, `LPR-using-yolov7.ipynb` is used.
 
 ## Future Work
 
