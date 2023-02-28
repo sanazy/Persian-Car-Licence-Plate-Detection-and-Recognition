@@ -179,6 +179,11 @@ Note: For this step, `Separate_Plates_from_Car_Images.ipynb` is used.
 
 #### Step 2.2.2: Train a model using yolov7
 
+Like training yolov7 for object detection of licence plates in the images, here, a model is trained for detecting the location of each character in license plate and classying it. The prepared dataset from previous step is fed into the model. The model is trained for 100 epochs for about 1 hour. The result for the last epoch is 0.968, 0.993, 0.991 and 0.661 for precision, recall, mAP@0.5 and mAP@.5:.95 respectively. 
+
+
+
+
 
 Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
 
