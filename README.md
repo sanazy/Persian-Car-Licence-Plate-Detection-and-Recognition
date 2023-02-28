@@ -137,8 +137,8 @@ In the following, the general steps which are taken for character segmentation a
 1) Detect the location of plate and change the detected plate to gray image
 3) Find the longest line in the image and calculate the angle of longest line in respect to the image
 5) Rotate the image if the calculated angle is greater than 10 or smaller than -10; in this way later classification problem will be easier \[[6](https://github.com/mrymsadeghi/Colab_notebooks/blob/main/plate_OCR_comparison.ipynb)\]
-6) Preprocess the image including apply gaussian blur, otsu thereshold, dilation to make characters in plate recognizeble from noise and background, then find connected contours \[[7](http://dangminhthang.com/computer-vision/characters-segmentation-and-recognition-for-vehicle-license-plate/)]\
-7) Search through found connected white blobs and check some criteria such as ratio and area; if ratio of hight to the width of rectangle containing the blob is greater than 0.8 and area of rectangle is greater than 100 then apply the image classification to recognize which character or number it is based on our trained ocr model \[[8](https://github.com/theAIGuysCode/yolov4-custom-functions)]\
+6) Preprocess the image including apply gaussian blur, otsu thereshold, dilation to make characters in plate recognizeble from noise and background, then find connected contours \[[7](http://dangminhthang.com/computer-vision/characters-segmentation-and-recognition-for-vehicle-license-plate/)\]
+7) Search through found connected white blobs and check some criteria such as ratio and area; if ratio of hight to the width of rectangle containing the blob is greater than 0.8 and area of rectangle is greater than 100 then apply the image classification to recognize which character or number it is based on our trained ocr model \[[8](https://github.com/theAIGuysCode/yolov4-custom-functions)\]
 8) Print the number of license plate and save the annotated image into the drive
 
 
@@ -149,7 +149,7 @@ In the image below, the result of some of the abovementioned steps for correctly
 </p>
 
 
-Probelms:
+Although, image processing will get good results for some cases, it suffers from manual tuning of some manual parameters such as size of filters or ratio and area which discussed earlier. In addition, some persian characters such as B (ب) which has dots on its own, cannot be recognized as a whole character and their dots can be incorrectly classified as 0 (۰). Moreover, sometimes after theresholding, some noises are big enough that considered as white blobs and feed into the model for classification which leads to wrong detected number plates. 
 
 
 Note: For this step, `LPR_Image_Processing.ipynb` is used.
@@ -157,13 +157,14 @@ Note: For this step, `LPR_Image_Processing.ipynb` is used.
 
 ### Step 2.2: OCR using Yolov7 pre-trained Model
 
+In this step, instead of using image processing techniques, a new yolov7 model is used for object detection of characters inside license plate. 
 
 #### Step 2.2.1: Prepare dataset  
 
 First, we need an appropriate dataset for training an object detection model to recognize the persian character and numbers available in car lince plates. 
-Since there were no such dataset, I manually annotate some of data available in [Iran-Vehicle-plate-dataset](https://www.kaggle.com/datasets/samyarr/iranvehicleplatedataset) and [IranianCarsNumberPlate](https://www.kaggle.com/datasets/skhalili/iraniancarnumberplate?resource=download). 
+Since no such dataset was found through research, ome of data available in [Iran-Vehicle-plate-dataset](https://www.kaggle.com/datasets/samyarr/iranvehicleplatedataset) and [IranianCarsNumberPlate](https://www.kaggle.com/datasets/skhalili/iraniancarnumberplate?resource=download) are annotated manually. 
 
-For this, the plate regions of images cropped and then feed into roboflow platform. Then, around 200 images is annotated, in a such a way that each character or number in the license plate determined by a bounding box and labeled to its corresponding class. There are 25 classes including numbers from 0 to 9 and characters repeated in private persian cars. After train and validation split, some augementation including adding noise, blurring and rotation is added to the data. In this way, the number of images reaches to around 560 images.
+For this, the plate regions of images of above datasets cropped and then feed into roboflow platform. After that, around 200 images are annotated, in a such a way that each character or number in the license plate determined by a bounding box and labeled to its corresponding class. There are 25 classes including numbers from 0 to 9 and characters repeated in private persian cars. After train and validation split, some augementation including adding noise, blurring and rotation is added to the data. In this way, the number of images reaches to around 560 images.
 
 In the image below, a view of some of annotated images are shown:
 
@@ -174,6 +175,7 @@ In the image below, a view of some of annotated images are shown:
 This annotated dataset is publicly available [here](https://universe.roboflow.com/sa-sa-d6awq/ocr-rzlyj/dataset/8).
 
 Note: For this step, `Separate_Plates_from_Car_Images.ipynb` is used.
+
 
 #### Step 2.2.2: Train a model using yolov7
 
@@ -195,6 +197,7 @@ In the image below, the prediction of model for some test cases is shown:
 
 Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
 
+
 #### Step 2.2.3: 
 
 After training the model using yolov7, in this step, a pipeline is created for two main steps of the project. First, detecting the license plate and second recognizing the character and numbers of plate for test images. The code written for this part is mainly get from [`detect.py`](https://github.com/augmentedstartups/yolov7/blob/main/detect.py) file of yolov7 codes. 
@@ -207,7 +210,8 @@ In the image below, the result of some of the abovementioned steps for correctly
 </p>
 
 
-Problems:
+After repeating the prediction on more test images, it is revealed that the performance of 
+
 
 Note: For this step, `LPR-using-yolov7.ipynb` is used.
 
