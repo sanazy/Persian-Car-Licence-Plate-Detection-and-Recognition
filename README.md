@@ -200,6 +200,13 @@ Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
 #### Step 2.2.3: 
 
 
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/ocr_yolov7_table.png" width=900/>
+</p>
+
+
+
+
 Note: For this step, `LPR-using-yolov7.ipynb` is used.
 
 
