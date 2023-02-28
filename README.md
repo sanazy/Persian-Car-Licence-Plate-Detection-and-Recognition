@@ -1,7 +1,13 @@
-# Automatic Number Plate Recognition (ANPR) for Persian Cars 
+# License Plate Recognition (LPR) of Persian Cars 
  
  
 ## Introduction
+
+License plate recognition is the ability of the computer-based system to automatically get the image of cars, locate the position of license plate in it and then convert the optical data of plate into digital information. This technology can be used in several vehicle management applications such as ticketless parking, stolen vehicles detection, smart billing and many more [1](https://survisiongroup.com/post-what-is-license-plate-recognition).
+
+Although there are many open-source projects which discuss how to implement such a system for engligh character license plates, few resources for persian license plates is availale. In addition, thanks to the advance of deep learning models, thesedays we can leverage complex and ease-of-use models such as yolo version 7 with higher accuracy for object detection tasks. 
+
+In this project, the aim is to implement an end-to-end system that can detect perisan license plates of cars and recognize the characters and numbers inside it in an image. The project can be mainly splitted into two stages. First, detection of license plates of cars using yolo version 7, one of the latest object detection model. Second, segmentation and recognition of persian license plate characters. For the second stage, two different methods are used, one using image processing techniques and another one using yolo version 7, this time for the recognition of characters.
 
 
 <p align="center">
@@ -11,7 +17,7 @@
 
 Note: This project is mostly inspired by this helpful [link](https://www.youtube.com/watch?v=bgAUHS1Adzo).
  
-## YOLOV7  
+## Step 0: Intro to YOLOV7  
 To detect the location of the car license plate in the images, Yolov7 pre-trained model were used. Here is the short description of this high-performing model:
 
 ### Performance
@@ -29,6 +35,7 @@ In Yolov7 architecture, Extended Efficient Layer Aggregation Network (E-ELAN) we
 \[[2](https://www.datacamp.com/blog/yolo-object-detection-explained)\].
 
 More information is available at this link \[[3](https://viso.ai/deep-learning/yolov7-guide/)\].
+
 
 ## Step 1: Number Plate Detection using Yolov7 pre-trained Model
 
