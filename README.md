@@ -210,7 +210,7 @@ In the image below, the result of some of the abovementioned steps for correctly
 </p>
 
 
-After repeating the prediction on more test images, it is revealed that the performance of 
+After repeating the prediction on more test images, it is revealed that the performance of this pipeline is much better than image processing techniques results. However, the predicted number plates are sensitive to the hyper parameter called `conf` which is the confidence level of prediction. If it is set too small, noises can be recognized as character. On the other hand, by setting it to too high values, some character or numbers inside the license plate will be missed. 
 
 
 Note: For this step, `LPR-using-yolov7.ipynb` is used.
