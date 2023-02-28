@@ -181,12 +181,18 @@ Note: For this step, `Separate_Plates_from_Car_Images.ipynb` is used.
 
 Like training yolov7 for object detection of licence plates in the images, here, a model is trained for detecting the location of each character in license plate and classying it. The prepared dataset from previous step is fed into the model. The model is trained for 100 epochs for about 1 hour. The result for the last epoch is 0.968, 0.993, 0.991 and 0.661 for precision, recall, mAP@0.5 and mAP@.5:.95 respectively. 
 
+In the image below, the performance of model during the training is shown. It is clear that the performance get improved during the time:
 
+
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/training_recognition_result.png"/>
+</p>
+
+In the image below, the prediction of model for some test cases is shown:
 
 <p align="center">
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correctly_labeled_plates.png" width=500/>
 </p>
-
 
 
 Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
@@ -195,6 +201,9 @@ Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
 
 
 Note: For this step, `LPR-using-yolov7.ipynb` is used.
+
+
+## Conclusion
 
 ## Future Work
 
