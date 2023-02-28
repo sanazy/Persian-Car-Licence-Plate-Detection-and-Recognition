@@ -219,7 +219,7 @@ Note: For this step, `LPR-using-yolov7.ipynb` is used.
 ## Conclusion and Future Work
 
 
-Last words:
+In this project, detection and recognition of persian license plates was implemented. For future work, some ideas are listed below:
 
 - Annotate more data for OCR
 - Gather more data as test set
@@ -229,4 +229,3 @@ Last words:
 - Recognize the characters/numbers of free zone and temporary passing license plates
 - Deploy the trained model on a web/mobile application and examine the performance on real-world images
 - Extend the overall idea of detecting and recognizing license plates of images into videos for tracked cars
-
