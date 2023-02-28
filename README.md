@@ -170,7 +170,7 @@ For this, the plate regions of images cropped and then feed into roboflow platfo
 In the image below, a view of some of annotated images are shown:
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/some_of_annotated_plates.png" width=700/>
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/some_of_annotated_plates.png" width=500/>
 </p>
 
 This annotated dataset is publicly available [here](https://universe.roboflow.com/sa-sa-d6awq/ocr-rzlyj/dataset/8).
@@ -182,6 +182,10 @@ Note: For this step, `Separate_Plates_from_Car_Images.ipynb` is used.
 Like training yolov7 for object detection of licence plates in the images, here, a model is trained for detecting the location of each character in license plate and classying it. The prepared dataset from previous step is fed into the model. The model is trained for 100 epochs for about 1 hour. The result for the last epoch is 0.968, 0.993, 0.991 and 0.661 for precision, recall, mAP@0.5 and mAP@.5:.95 respectively. 
 
 
+
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/correctly_labeled_plates.png" width=500/>
+</p>
 
 
 
