@@ -164,12 +164,25 @@ Note: For this step, `LPR_Image_Processing.ipynb` is used.
 
 First, we need an appropriate dataset for training an object detection model to recognize the persian character and numbers available in car lince plates. 
 Since there were no such dataset, I manually annotate some of data available in [Iran-Vehicle-plate-dataset](https://www.kaggle.com/datasets/samyarr/iranvehicleplatedataset) and [IranianCarsNumberPlate](https://www.kaggle.com/datasets/skhalili/iraniancarnumberplate?resource=download). 
-For this, the plate regions of images cropped and then feed into roboflow platform. Then, around 200 images is annotated, in a such a way that each character or number in the license plate determined by a bounding box and labeled to its corresponding class. 
+
+For this, the plate regions of images cropped and then feed into roboflow platform. Then, around 200 images is annotated, in a such a way that each character or number in the license plate determined by a bounding box and labeled to its corresponding class. There are 25 classes including numbers from 0 to 9 and characters repeated in private persian cars. After train and validation split, some augementation including adding noise, blurring and rotation is added to the data. In this way, the number of images reaches to around 560 images.
+
+In the image below, a view of some of annotated images are shown:
+
+<p align="center">
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/some_of_annotated_plates.png" width=700/>
+</p>
 
 This annotated dataset is publicly available [here](https://universe.roboflow.com/sa-sa-d6awq/ocr-rzlyj/dataset/8).
 
+Note: For this step, `Separate_Plates_from_Car_Images.ipynb` is used.
 
 #### Step 2.2.2: Train a model using yolov7
+
+Like training yolov7 for object detection of licence plates in the images, here, a model is trained for detecting the location of each character in license plate and classying it. The prepared dataset from previous step is fed into the model. The model is trained for 100 epochs for about 1 hour. The result for the last epoch is 0.968, 0.993, 0.991 and 0.661 for precision, recall, mAP@0.5 and mAP@.5:.95 respectively. 
+
+
+
 
 
 Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
