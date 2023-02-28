@@ -185,7 +185,7 @@ In the image below, the performance of model during the training is shown. It is
 
 
 <p align="center">
-  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/training_recognition_result.png"/>
+  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/training_recognition_result.png" width=700/>
 </p>
 
 In the image below, the prediction of model for some test cases is shown:
