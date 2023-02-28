@@ -49,10 +49,6 @@ To easily generate a uniform dataset out of the above mentioned datasets, [robof
 
 ### Step 1.2: Train the Yolov7 Model
 
-Note: You might encounter following error when you want to train the yolov7 model:
-`Indices should be either on cpu or on the same device as the indexed tensor`
-To handle this bug, some minor changes to `loss.py` file as mentioned in this [link](https://stackoverflow.com/questions/74372636/indices-should-be-either-on-cpu-or-on-the-same-device-as-the-indexed-tensor) will help. 
-
 Training is last for about 1 hour for 30 epochs. In the following image, the result of training is shown:
 
 <p align="center">
@@ -60,6 +56,10 @@ Training is last for about 1 hour for 30 epochs. In the following image, the res
 </p>
 
 As it can be seen, the precision, recall and mAP@0.5 (mAP calculated at IOU threshold 0.5) of both training and validation data reaches around 0.9 through training time.
+
+Note: You might encounter following error when you want to train the yolov7 model:
+`Indices should be either on cpu or on the same device as the indexed tensor`
+To handle this bug, some minor changes to `loss.py` file as mentioned in this [link](https://stackoverflow.com/questions/74372636/indices-should-be-either-on-cpu-or-on-the-same-device-as-the-indexed-tensor) will help. 
 
 Here a few test images that their license plate are correctly predicted by trained model are shown. The model could correctly detect license plates and draw their corresponding bounding boxes in different circumstances with different angles and illumination. In addition, it could detect two or more license plates whenever more cars are available in the image:
 
@@ -93,7 +93,7 @@ Another method is to train an object detection model such as yolov7, this time, 
 
 #### Step 2.1.1 Prepare the Dataset and Train the CNN model
 
-To train an model to recognize the persian characters and numbers, we need to have a related dataset. After some reseach, a dataset named **Iranis** was found which is appropriate for training licence plate recognition applications. Iranis is a large-scale dataset consists of more than 83000 real-world images of persian characters and numbers of car license plates \[[5](https://arxiv.org/ftp/arxiv/papers/2101/2101.00295.pdf)\]. 
+To train a model to recognize the persian characters and numbers, we need to have a related dataset. After some reseach, a dataset named **Iranis** was found which is appropriate for training licence plate recognition applications. Iranis is a large-scale dataset consists of more than 83000 real-world images of persian characters and numbers of car license plates \[[5](https://arxiv.org/ftp/arxiv/papers/2101/2101.00295.pdf)\]. 
 
 In the image below, some sample images of this dataset for each character and number is shown:
 
@@ -132,13 +132,13 @@ Note: For this step, `Train_CNN_Model_for_LPR.ipynb` is used.
 After training a model to classify each character/number, it is time to segment each one and feed it to the model to recognize which character it is. In this section, several image processing techniques have been used for segmentation of characters in detected plate. 
 
 
-In the following the general steps which are taken for character segmentation and recognition are listed:
+In the following, the general steps which are taken for character segmentation and recognition are listed:
 
 1) Detect the location of plate and change the detected plate to gray image
 3) Find the longest line in the image and calculate the angle of longest line in respect to the image
-5) Rotate the image if the calculated angle is greater than 10 or smaller than -10; in this way later classification problem will be easier [???](https://github.com/mrymsadeghi/Colab_notebooks/blob/main/plate_OCR_comparison.ipynb)
-6) Preprocess the image including apply gaussian blur, otsu thereshold, dilation to make characters in plate recognizeble from noise and background, then find connected contours [???](http://dangminhthang.com/computer-vision/characters-segmentation-and-recognition-for-vehicle-license-plate/)
-7) Search through found connected white blobs and check some criteria such as ratio and area; if ratio of hight to the width of rectangle containing the blob is greater than 0.8 and area of rectangle is greater than 100 then apply the image classification to recognize which character or number it is based on our trained ocr model [???](https://github.com/theAIGuysCode/yolov4-custom-functions)
+5) Rotate the image if the calculated angle is greater than 10 or smaller than -10; in this way later classification problem will be easier \[[6](https://github.com/mrymsadeghi/Colab_notebooks/blob/main/plate_OCR_comparison.ipynb)\]
+6) Preprocess the image including apply gaussian blur, otsu thereshold, dilation to make characters in plate recognizeble from noise and background, then find connected contours \[[7](http://dangminhthang.com/computer-vision/characters-segmentation-and-recognition-for-vehicle-license-plate/)]\
+7) Search through found connected white blobs and check some criteria such as ratio and area; if ratio of hight to the width of rectangle containing the blob is greater than 0.8 and area of rectangle is greater than 100 then apply the image classification to recognize which character or number it is based on our trained ocr model \[[8](https://github.com/theAIGuysCode/yolov4-custom-functions)]\
 8) Print the number of license plate and save the annotated image into the drive
 
 
