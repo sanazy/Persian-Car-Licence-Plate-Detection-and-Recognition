@@ -2,14 +2,14 @@
  
  
 ## Introduction
-This project is mostly inspired by this helpful [link](https://www.youtube.com/watch?v=bgAUHS1Adzo).
+
 
 <p align="center">
  <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/project_overview.png" width="800"/>
 </p>
 
 
-
+Note: This project is mostly inspired by this helpful [link](https://www.youtube.com/watch?v=bgAUHS1Adzo).
  
 ## YOLOV7  
 To detect the location of the car license plate in the images, Yolov7 pre-trained model were used. Here is the short description of this high-performing model:
@@ -71,7 +71,7 @@ There are also some false positives where model incorrectly detect some rectangu
 </p>
 
 
-Note: For this step, `License-Plate-Detector.ipynb` is used. 
+Note: For this step, `Train_Yolov7_for_LPD.ipynb` is used. 
 
 ## Step 2: Optical Character Recognition (OCR) 
 
@@ -122,7 +122,7 @@ Moreover, the confusion matrix shows that number of true positives for each clas
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/cnn_confusion_matrix.png" width=500/>
 </p>
 
-Note: For this step, `Train_CNN_Model_for_OCR.ipynb` is used.
+Note: For this step, `Train_CNN_Model_for_LPR.ipynb` is used.
 
 
 
@@ -151,12 +151,33 @@ In the image below, the result of some of the abovementioned steps for correctly
 Probelms:
 
 
-Note: For this step, `OCR-Image-Processing.ipynb` is used.
+Note: For this step, `LPR_Image_Processing.ipynb` is used.
+
+
+
+
 
 ### Step 2.2: OCR using Yolov7 pre-trained Model
 
 
+#### Step 2.2.1: Prepare dataset  
 
+First, we need an appropriate dataset for training an object detection model to recognize the persian character and numbers available in car lince plates. 
+Since there were no such dataset, I manually annotate some of data available in [Iran-Vehicle-plate-dataset](https://www.kaggle.com/datasets/samyarr/iranvehicleplatedataset) and [IranianCarsNumberPlate](https://www.kaggle.com/datasets/skhalili/iraniancarnumberplate?resource=download). 
+For this, the plate regions of images cropped and then feed into roboflow platform. Then, around 200 images is annotated, in a such a way that each character or number in the license plate determined by a bounding box and labeled to its corresponding class. 
+
+This annotated dataset is publicly available [here](https://universe.roboflow.com/sa-sa-d6awq/ocr-rzlyj/dataset/8).
+
+
+#### Step 2.2.2: Train a model using yolov7
+
+
+Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
+
+#### Step 2.2.3: 
+
+
+Note: For this step, `LPR-using-yolov7.ipynb` is used.
 
 ## Future Work
 
