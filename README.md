@@ -154,9 +154,6 @@ Probelms:
 Note: For this step, `LPR_Image_Processing.ipynb` is used.
 
 
-
-
-
 ### Step 2.2: OCR using Yolov7 pre-trained Model
 
 
@@ -199,18 +196,25 @@ Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
 
 #### Step 2.2.3: 
 
+After training the model using yolov7, in this step, a pipeline is created for two main steps of the project. First, detecting the license plate and second recognizing the character and numbers of plate for test images. The code written for this part is mainly get from [`detect.py`](https://github.com/augmentedstartups/yolov7/blob/main/detect.py) file of yolov7 codes. 
+
+
+In the image below, the result of some of the abovementioned steps for correctly recognized license plates are shown: 
 
 <p align="center">
   <img src="https://github.com/sanazy/Persian-Car-Licence-Plate-Detection-and-Recognition/blob/main/images/ocr_yolov7_table.png" width=900/>
 </p>
 
 
-
+Problems:
 
 Note: For this step, `LPR-using-yolov7.ipynb` is used.
 
 
 ## Conclusion and Future Work
+
+
+Last words:
 
 - Annotate more data for OCR
 - Gather more data as test set
