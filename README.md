@@ -203,13 +203,12 @@ Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
 Note: For this step, `LPR-using-yolov7.ipynb` is used.
 
 
-## Conclusion
+## Conclusion and Future Work
 
-## Future Work
-
+- Annotate more data for OCR
+- Gather more data as test set
 - Train for more epochs and tune the hyperparameters to improve the performance of models
 - Investigate missclassfied license plates for detection and characters/numbers for recognition
-- Annotate more data for OCR
 - Recognize the characters/numbers of license plates other than private cars such as govermental, police and public transportation
 - Recognize the characters/numbers of free zone and temporary passing license plates
 - Deploy the trained model on a web/mobile application and examine the performance on real-world images
