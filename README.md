@@ -198,7 +198,7 @@ In the image below, the prediction of model for some test cases is shown:
 Note: For this step, `Train_Yolov7_for_LPR.ipynb` is used.
 
 
-#### Step 2.2.3: 
+#### Step 2.2.3: Create a pipeline for detection and recognition
 
 After training the model using yolov7, in this step, a pipeline is created for two main steps of the project. First, detecting the license plate and second recognizing the character and numbers of the plate for test images. The code written for this part is mainly get from the [`detect.py`](https://github.com/augmentedstartups/yolov7/blob/main/detect.py) file of yolov7 codes. 
 
